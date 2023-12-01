@@ -67,6 +67,10 @@ return [
             'driver' => 'session',
             'provider' => 'companies',
         ],
+        'call-center' => [
+            'driver' => 'session',
+            'provider' => 'call-centers',
+        ],
 
         'admin-api' => [
             'driver' => 'jwt',
@@ -116,6 +120,11 @@ return [
         'companies' => [
             'driver' => 'eloquent',
             'model' => App\Models\Company::class,
+        ],
+
+        'call-centers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Callcenter::class,
         ],
 
         'employees' => [

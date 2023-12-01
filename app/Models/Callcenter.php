@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -7,15 +8,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\{HasOne,BelongsTo};
 
-class Agent extends Authenticatable implements JWTSubject {
+class Callcenter extends Authenticatable implements JWTSubject  {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $table = 'agents';
-    protected $fillable = ['name','email','password', 'admin_id', 'country_id' ,'phone', 'status'];
+    protected $table = 'callcenters';
+    protected $fillable = ['name','email','password', 'admin_id', 'agent_id', 'country_id' ,'phone', 'status'];
     protected $hidden = ['password','remember_token',];
     protected $casts = ['email_verified_at' => 'datetime','password' => 'hashed',];
 
     public function profile(): HasOne {
-        return $this->hasOne(related:AgentProfile::class, foreignKey:'agent_id');
+        return $this->hasOne(related:CallcenterProfile::class, foreignKey:'callcenter_id');
+    }
+
+    public function scopeActive() {
+        return $this->whereStatus('active')->get();
     }
 
     public function country(): BelongsTo {
@@ -26,8 +31,8 @@ class Agent extends Authenticatable implements JWTSubject {
         return $this->belongsTo(related:Admin::class, foreignKey:'admin_id');
     }
 
-    public function scopeActive() {
-        return $this->whereStatus('active')->get();
+    public function agent(): BelongsTo {
+        return $this->belongsTo(related:Agent::class, foreignKey:'agent_id');
     }
 
     public function getJWTIdentifier() {

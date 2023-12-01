@@ -139,6 +139,12 @@
                         <a class="dropdown-item" href="{{ route('agent.logout') }}" onclick="event.preventDefault();
                         this.closest('form').submit();"><i class="text-danger ti-unlock"></i>Logout</a>
                     </form>
+                @elseif (auth('call-center')->check())
+                    <form method="POST" action="{{ route('callCenter.logout') }}">
+                        @csrf
+                        <a class="dropdown-item" href="{{ route('callCenter.logout') }}" onclick="event.preventDefault();
+                        this.closest('form').submit();"><i class="text-danger ti-unlock"></i>Logout</a>
+                    </form>
                 @endif
             </div>
         </li>
