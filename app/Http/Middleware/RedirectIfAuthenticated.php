@@ -29,6 +29,8 @@ class RedirectIfAuthenticated
                     return redirect(RouteServiceProvider::COMPANY_DASHBOARD);
                 } elseif($guard === 'agent') {
                     return redirect(RouteServiceProvider::AGENT_DASHBOARD);
+                } elseif($guard === 'call-center') {
+                    return redirect(RouteServiceProvider::CALL_CENTER_DASHBOARD);
                 }
                 
             }
