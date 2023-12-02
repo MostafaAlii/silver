@@ -11,6 +11,7 @@ trait Activityable {
             });
         });
     }
+    
     protected function saveChange(ColumnChange $change) {
         $this->activity()->create([
             'changed_column' => $change->column,
