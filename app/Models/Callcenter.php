@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\{HasOne,BelongsTo};
 class Callcenter extends Authenticatable implements JWTSubject  {
     use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'callcenters';
-    protected $fillable = ['name','email','password', 'admin_id', 'agent_id', 'country_id' ,'phone', 'status'];
+    protected $fillable = ['name','email','password', 'admin_id', 'agent_id', 'country_id' ,'phone', 'status', 'type'];
     protected $hidden = ['password','remember_token',];
     protected $casts = ['email_verified_at' => 'datetime','password' => 'hashed',];
 

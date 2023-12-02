@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('country_id')->constrained()->cascadeOnDelete();
             $table->string('phone', 20)->nullable();
             $table->enum('status', ['active', 'inactive'])->default('inactive');
+            $table->enum('type', ['manager', 'callcenter'])->default('callcenter');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -46,6 +46,7 @@ class CallCenterDataTable extends BaseDataTable {
             ['name' => 'email', 'data' => 'email', 'title' => 'Email',],
             ['name' => 'phone', 'data' => 'phone', 'title' => 'Phone',],
             ['name' => 'country_id', 'data' => 'country_id', 'title' => 'Country',],
+            ['name' => 'type', 'data' => 'type', 'title' => 'Type',],
             ['name' => 'status', 'data' => 'status', 'title' => 'Status',],
             ['name' => 'created_at', 'data' => 'created_at', 'title' => 'Created_at', 'orderable' => false, 'searchable' => false,],
             ['name' => 'updated_at', 'data' => 'updated_at', 'title' => 'Update_at', 'orderable' => false, 'searchable' => false,],

@@ -32,6 +32,14 @@ Route::group(
         // Employees ::
         Route::resource('employees', Admin\EmployeeController::class);
         Route::post('employees/{employeeId}/update-password', [Admin\EmployeeController::class, 'updatePassword'])->name('employees.update-password');
+
+        // Call-Center ::
+        Route::resource('callCenters', Admin\CallCenterController::class);
+        Route::post('callCenters/{callCentereId}/update-password', [Admin\CallCenterController::class, 'updatePassword'])->name('callCenters.update-password');
+        Route::post('callCenters/update-status/{id}', [Admin\CallCenterController::class, 'updateStatus'])->name('callCenters.updateStatus');
+        Route::post('callCenters/{callCentereId}/update-status', [Admin\CallCenterController::class, 'updateStatus'])->name('callCenters.update-status');
+        Route::post('callCenters/{callCentereId}/update-type', [Admin\CallCenterController::class, 'updateType'])->name('callCenters.update-type');
+        
         // Captains ::
         Route::resource('captains', Admin\CaptainController::class);
         Route::get('captains/Orders/get', [Admin\CaptainController::class, 'getOrders'])->name('captains.getOrders');
