@@ -1,6 +1,6 @@
 <?php
 namespace App\Models\Concerns\Activity;
-use App\Models\ImagesActivity;
+use App\Models\{Image, ImagesActivity};
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
 trait Activityable {
@@ -11,25 +11,30 @@ trait Activityable {
             });
         });
     }
-    
+
     protected function saveChange(ColumnChange $change) {
-        $this->activity()->create([
-            'changed_column' => $change->column,
-            'change_value_from' => $change->from,
-            'change_value_to' => $change->to,
-            'type' => $change->type,
-            //'photo_type' => $change->photo_type,
-            'admin_id' => auth()->guard('admin')?->id(),
-            'call_center_id' => auth()->guard('call-center')?->id(),
-            'image_id' => $this->getKey(),
-        ]);
+        $image = Image::find($this->getKey());
+        if ($image) {
+            $photoType = $image->photo_type;
+            $this->activity()->create([
+                'changed_column' => $change->column,
+                'change_value_from' => $change->from,
+                'change_value_to' => $change->to,
+                'type' => $change->type,
+                'photo_type' => $photoType,
+                'admin_id' => auth()->guard('admin')?->id(),
+                'call_center_id' => auth()->guard('call-center')?->id(),
+                'image_id' => $this->getKey(),
+            ]);
+        }
     }
+
 
     protected function getWantedChangedColumns(Model $model) {
         return collect(
             array_diff(Arr::except($model->getChanges(), $this->ignoreActivityColumns()), $original = $model->getOriginal())
         )->map(function ($change, $column) use ($original) {
-            return new ColumnChange($column, Arr::get($original, $column), $change, $this->getImageType($column));
+            return new ColumnChange($column, Arr::get($original, $column), $change, $this->getImageType($column), $this->getKey());
         });
     }
 
