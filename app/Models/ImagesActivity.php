@@ -15,6 +15,10 @@ class ImagesActivity extends Model {
     }
 
     public function callCenter() {
-        return $this->belongsTo(Callcenter::class, 'callcenter_id');
+        return $this->belongsTo(Callcenter::class, 'call_center_id');
+    }
+
+    public function image() {
+        return $this->belongsTo(Image::class, 'image_id');
     }
 }

@@ -39,6 +39,7 @@ Route::group(
         Route::post('callCenters/update-status/{id}', [Admin\CallCenterController::class, 'updateStatus'])->name('callCenters.updateStatus');
         Route::post('callCenters/{callCentereId}/update-status', [Admin\CallCenterController::class, 'updateStatus'])->name('callCenters.update-status');
         Route::post('callCenters/{callCentereId}/update-type', [Admin\CallCenterController::class, 'updateType'])->name('callCenters.update-type');
+        Route::get('activity', [Admin\CallCenterActivityController::class, 'getActivity'])->name('callCenters.activity');
         
         // Captains ::
         Route::resource('captains', Admin\CaptainController::class);
