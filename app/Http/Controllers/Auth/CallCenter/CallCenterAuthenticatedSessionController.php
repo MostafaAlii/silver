@@ -12,11 +12,18 @@ class CallCenterAuthenticatedSessionController extends Controller {
 
     public function store(CallCenterLoginRequest $request): RedirectResponse {
         $request->authenticate($request);
+        dd($request->user()->call_center_attendances());
         $request->session()->regenerate();
         return redirect()->route('callCenter.dashboard');
     }
 
     public function destroy(Request $request): RedirectResponse {
+        $user = auth('call-center')->user();
+        if ($user) {
+            $attendance = $user->call_center_attendances()->where('day', now()->toDateString())->whereNull('logout')->first();
+            if ($attendance)
+                $attendance->update(['logout' => now()->format('H:i:s')]);
+        }
         Auth::guard('call-center')->logout();
         $request->session()->forget('guard.call-center');
         $request->session()->regenerateToken();

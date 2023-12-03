@@ -48,6 +48,7 @@ class CallCenterDataTable extends BaseDataTable {
             ['name' => 'country_id', 'data' => 'country_id', 'title' => 'Country',],
             ['name' => 'type', 'data' => 'type', 'title' => 'Type',],
             ['name' => 'status', 'data' => 'status', 'title' => 'Status',],
+            ['name' => 'last_seen', 'data' => 'last_seen', 'title' => 'Last Seen', 'orderable' => false, 'searchable' => false,],
             ['name' => 'created_at', 'data' => 'created_at', 'title' => 'Created_at', 'orderable' => false, 'searchable' => false,],
             ['name' => 'updated_at', 'data' => 'updated_at', 'title' => 'Update_at', 'orderable' => false, 'searchable' => false,],
             ['name' => 'action', 'data' => 'action', 'title' => 'Action', 'orderable' => false, 'searchable' => false,],
