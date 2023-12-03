@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        Settings::updateOrCreate(['id' => 1, 'facebook' => fake()->url(),
+        /*Settings::updateOrCreate(['id' => 1, 'facebook' => fake()->url(),
             'instagram' => fake()->url(),
             'phone' => fake()->phoneNumber(),
             'whatsapp' => fake()->phoneNumber(),
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'company_commission' => 5,
             'company_tax' => 6,
             'price_day' => 100,
-        ]);
+        ]);*/
 
         $this->call([
             WordSeeder::class,
