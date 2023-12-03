@@ -21,6 +21,7 @@ class CallCenterLoginRequest extends FormRequest {
         $this->ensureIsNotRateLimited();
         if (auth('call-center')->attempt(['email' => $request->email, 'password' => $request->password, 'status' => 'active'], $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
+            $this->recordAttendance(auth('call-center')->user(), 'login');
             throw ValidationException::withMessages([
                 'email' => __('auth.failed'),
             ]);
@@ -39,6 +40,14 @@ class CallCenterLoginRequest extends FormRequest {
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
+        ]);
+    }
+
+    protected function recordAttendance($user, $action) {
+        $user->call_center_attendances()->create([
+            'call_center_id' => $user->id,
+            'day' => now()->toDateString(),
+            $action => now()->format('H:i:s'),
         ]);
     }
 

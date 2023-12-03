@@ -1,13 +1,17 @@
 <?php
 namespace App\Http\Controllers\Dashboard\Admin;
-use App\DataTables\Dashboard\Admin\CallCenterDataTable;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\Admin\CallCenterRequestValidation;
-use App\Services\Dashboard\Admins\CallCenterService;
-use App\Services\Dashboard\General\GeneralService;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Services\Dashboard\General\GeneralService;
+use App\Services\Dashboard\Admins\CallCenterService;
+use App\DataTables\Dashboard\Admin\{CallCenterDataTable};
+use App\Http\Requests\Dashboard\Admin\CallCenterRequestValidation;
+
 class CallCenterController extends Controller {
-    public function __construct(protected CallCenterDataTable $dataTable, protected CallCenterService $callCenterService, protected GeneralService $generalService) {
+    public function __construct(
+        protected CallCenterDataTable $dataTable, protected CallCenterService $callCenterService,
+        protected GeneralService $generalService
+        ) {
         $this->dataTable = $dataTable;
         $this->callCenterService = $callCenterService;
         $this->generalService = $generalService;
