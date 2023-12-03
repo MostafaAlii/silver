@@ -128,7 +128,7 @@
                     <ul id="callcenters_managment" class="collapse" data-parent="#sidebarnav">
                         <li><a href="{{route('callCenters.index')}}">Call-Centers</a></li>
                         <li><a href="{{route('callCenters.activity')}}">Call-Centers Activity</a></li>
-                        <li><a href="{{--route('callCenters.attendance')--}}">Call-Centers Attendance</a></li>
+                        <li><a href="{{route('attendances.index')}}">Call-Centers Attendance</a></li>
                     </ul>
                 </li>
                 <!-- End Call Center Management Menu -->
