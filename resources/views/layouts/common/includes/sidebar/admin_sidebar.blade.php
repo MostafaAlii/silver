@@ -14,7 +14,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#setting_managment">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">Settings Management</span></div>
+                            <span class="right-nav-text">Settings Management</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -24,7 +25,8 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#car_managment">
                             <div class="pull-left">
                                 <i class="ti-car"></i>
-                                <span class="right-nav-text">Car Management</span></div>
+                                <span class="right-nav-text">Car Management</span>
+                            </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -40,7 +42,8 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#general_managment">
                             <div class="pull-left">
                                 <i class="ti-car"></i>
-                                <span class="right-nav-text">General Settings</span></div>
+                                <span class="right-nav-text">General Settings</span>
+                            </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -52,7 +55,8 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#section_managment">
                             <div class="pull-left">
                                 <i class="ti-car"></i>
-                                <span class="right-nav-text">Sections</span></div>
+                                <span class="right-nav-text">Sections</span>
+                            </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -62,7 +66,8 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#discount_managment">
                             <div class="pull-left">
                                 <i class="ti-car"></i>
-                                <span class="right-nav-text">Discount</span></div>
+                                <span class="right-nav-text">Discount</span>
+                            </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -72,7 +77,8 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#package_managment">
                             <div class="pull-left">
                                 <i class="ti-car"></i>
-                                <span class="right-nav-text">Packages</span></div>
+                                <span class="right-nav-text">Packages</span>
+                            </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -86,13 +92,15 @@
 
 
                 <!-- Start Admin Managment Menu-->
-                <li class="pl-4 mt-10 mb-10 font-medium text-muted menu-title">{{ trans('admins.admin_managment') }}</li>
+                <li class="pl-4 mt-10 mb-10 font-medium text-muted menu-title">{{ trans('admins.admin_managment') }}
+                </li>
 
                 <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#admins_managment">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">{{ trans('admins.admin_managment') }}</span></div>
+                            <span class="right-nav-text">{{ trans('admins.admin_managment') }}</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -120,6 +128,7 @@
                     <ul id="callcenters_managment" class="collapse" data-parent="#sidebarnav">
                         <li><a href="{{route('callCenters.index')}}">Call-Centers</a></li>
                         <li><a href="{{route('callCenters.activity')}}">Call-Centers Activity</a></li>
+                        <li><a href="{{--route('callCenters.attendance')--}}">Call-Centers Attendance</a></li>
                     </ul>
                 </li>
                 <!-- End Call Center Management Menu -->
@@ -131,7 +140,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#caption">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">Captains</span></div>
+                            <span class="right-nav-text">Captains</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -148,7 +158,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#users">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">users</span></div>
+                            <span class="right-nav-text">users</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -168,7 +179,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Reposts">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">Reposts</span></div>
+                            <span class="right-nav-text">Reposts</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -191,7 +203,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#orders">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">orders</span></div>
+                            <span class="right-nav-text">orders</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -213,7 +226,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#accounts">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">Accounts</span></div>
+                            <span class="right-nav-text">Accounts</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
@@ -230,7 +244,8 @@
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#integrations">
                         <div class="pull-left">
                             <i class="ti-palette"></i>
-                            <span class="right-nav-text">Integrations</span></div>
+                            <span class="right-nav-text">Integrations</span>
+                        </div>
                         <div class="pull-right"><i class="ti-plus"></i></div>
                         <div class="clearfix"></div>
                     </a>
