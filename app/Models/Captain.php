@@ -100,4 +100,9 @@ class Captain extends Authenticatable implements JWTSubject
         return $this->hasMany(CarsCaption::class,'captain_id');
     }
 
+    public function bouns()
+    {
+        return $this->hasMany(CaptionBonus::class,'captain_id');
+    }
+
 }

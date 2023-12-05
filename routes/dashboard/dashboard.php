@@ -50,6 +50,7 @@ Route::group(
         Route::post('captains/{captainId}/update-password', [Admin\CaptainController::class, 'updatePassword'])->name('captains.update-password');
         Route::put('/captains/{id}/updateStatus', [Admin\CaptainController::class, 'updateActivityStatus'])->name('captain.updateActivityStatus');
         Route::get('captains/{captainId}/notifications', [Admin\CaptainController::class, 'notifications'])->name('captains.notifications');
+        Route::get('captains/{captainId}/bounes', [Admin\CaptainController::class, 'bounes'])->name('captains.bouns');
         Route::post('captains/{captainId}/sendNotifications', [Admin\CaptainController::class, 'sendNotifications'])->name('captains.sendNotifications');
         Route::get('captains/{captainId}/getCaptainActivity', [Admin\CaptainController::class, 'getCaptainActivity'])->name('captains.activity');
         

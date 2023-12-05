@@ -53,6 +53,14 @@
                 My Trips
             </span>
         </a>
+
+        <button type="button" class="modal-effect btn btn-sm btn-primary dropdown-item" style="text-align: center !important"
+            data-toggle="modal" data-target="#bounes{{$captain->id}}" data-effect="effect-scale">
+            <span class="icon text-dark text-bold">
+                <i class="fa fa-edit"></i>
+                Bounes
+            </span>
+        </button>
     </div>
 </div>
 
@@ -60,4 +68,5 @@
 @include('dashboard.admin.captains.btn.modals.edit')
 @include('dashboard.admin.captains.btn.modals.notifications')
 @include('dashboard.admin.captains.btn.modals.updatePassword')
+@include('dashboard.admin.captains.btn.modals.bounes')
 @include('dashboard.admin.captains.btn.modals.destroy')

@@ -4,7 +4,7 @@ use App\DataTables\Orders\OrderDataTable;
 use Illuminate\Http\Request;
 use App\Models\{CaptainProfile,CarsCaptionStatus,Captain,Image, Order};
 use App\Http\Controllers\Controller;
-use App\DataTables\Dashboard\Admin\CaptainDataTable;
+use App\DataTables\Dashboard\Admin\Captain\{CaptainDataTable, CaptainBounesDataTable};
 use App\Http\Requests\Dashboard\Admin\CaptionRequestValidation;
 use App\Services\Dashboard\{Admins\CaptainService, General\GeneralService};
 
@@ -77,6 +77,15 @@ class CaptainController extends Controller {
     public function notifications($captainId) {
         try {
             return $this->captainService->getNotifications($captainId);
+        } catch (\Exception $e) {
+            return redirect()->route('captains.index')->with('error', 'An error occurred while getting the captain notifications');
+        }
+    }
+
+    public function bounes($captainId) {
+        //dd($this->captainService->getBounes($captainId));
+        try {
+            $this->captainService->getBounes($captainId);
         } catch (\Exception $e) {
             return redirect()->route('captains.index')->with('error', 'An error occurred while getting the captain notifications');
         }

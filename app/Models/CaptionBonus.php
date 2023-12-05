@@ -11,18 +11,12 @@ class CaptionBonus extends Model
 
     protected $fillable = [
         'captain_id',
-        'bonuses_id',
         'bout',
         'status',
     ];
 
     public function captain()
     {
-        return $this->belongsTo(Captain::class,'captain_id');
-    }
-
-    public function bonuses()
-    {
-        return $this->belongsTo(Bonus::class,'bonuses_id');
+        return $this->belongsTo(Captain::class, 'captain_id');
     }
 }
