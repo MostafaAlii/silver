@@ -23,7 +23,7 @@ class CaptainBounesDataTable extends BaseDataTable {
                 return $this->formatStatus($bonus->status);
             })
             ->editColumn('captain_id', function (CaptionBonus $bonus) {
-                return $bonus?->captain?->name;
+                return '<a href="'.route('captains.show', $bonus->captain->profile->uuid).'">'. optional($bonus->captain)->name .'</a>';
             })
             ->rawColumns(['created_at', 'updated_at','status', 'captain_id']);
     }
@@ -35,12 +35,10 @@ class CaptainBounesDataTable extends BaseDataTable {
     public function getColumns(): array {
         return [
             ['name' => 'id', 'data' => 'id', 'title' => '#', 'orderable' => false, 'searchable' => false,],
-            ['name' => 'name', 'data' => 'name', 'title' => 'Name',],
-            ['name' => 'captain_id', 'captain_id' => 'name', 'title' => 'Captain',],
+            ['name' => 'captain_id', 'data' => 'captain_id', 'title' => 'Captain',],
             ['name' => 'status', 'data' => 'status', 'title' => 'Status',],
             ['name' => 'created_at', 'data' => 'created_at', 'title' => 'Created_at', 'orderable' => false, 'searchable' => false,],
             ['name' => 'updated_at', 'data' => 'updated_at', 'title' => 'Update_at', 'orderable' => false, 'searchable' => false,],
-            ['name' => 'action', 'data' => 'action', 'title' => 'Action', 'orderable' => false, 'searchable' => false,],
         ];
     }
 }

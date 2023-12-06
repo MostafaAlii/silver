@@ -151,6 +151,23 @@
                 </li>
                 <!-- End Admin Managment Menu-->
 
+                <!-- Start Bouns -->
+                <li class="pl-4 mt-10 mb-10 font-medium text-muted menu-title">Bouns</li>
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#bouns">
+                        <div class="pull-left">
+                            <i class="ti-palette"></i>
+                            <span class="right-nav-text">Bouns</span>
+                        </div>
+                        <div class="pull-right"><i class="ti-plus"></i></div>
+                        <div class="clearfix"></div>
+                    </a>
+                    <ul id="bouns" class="collapse" data-parent="#sidebarnav">
+                        <li><a href="{{route('bouns.index')}}">Bouns</a></li>
+                    </ul>
+                </li>
+                <!-- End Bouns -->
+
                 <!-- Start Admin Managment Menu-->
                 <li class="pl-4 mt-10 mb-10 font-medium text-muted menu-title">users</li>
 
