@@ -41,7 +41,7 @@
                 ]) !!}
                 <!--end::Table-->
             </div>
-            {{--@include('dashboard.admin.captains.btn.modals.create')--}}
+            @include('dashboard.admin.bouns.btn.modals.create')
         </div>
     </div>
 </div>
