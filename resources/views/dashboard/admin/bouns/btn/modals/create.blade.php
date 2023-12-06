@@ -12,7 +12,7 @@
                 <form action="{{route('bouns.store')}}" method="POST">
                     @csrf
                     <div class="repeater">
-                        <div data-repeater-list="List_Bounes">
+                        <div data-repeater-list="listBounes">
                             <div data-repeater-item>
                                 <div class="row">
                                     <div class="col">
