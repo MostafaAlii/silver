@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="bounes{{$captain->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateBounes{{$captain->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('captains.bouns', $captain->id)}}" method="post">
+                <form action="{{route('captains.updateBounsStatus', $captain->id)}}" method="post">
                     @csrf
                     <div class="table-responsive" bis_skin_checked="1">
                         <table id="datatable" class="table-bordered border table table-striped dataTable p-0 table-hover dark">
@@ -25,9 +25,14 @@
                             @endphp
                             @forelse ($bouns as $boun)
                             <tr>
-                                <td>{{$boun?->bout }}</td>
+                                <td><input type="text" class="form-control" required name="bout" id="bout" value="{{$boun->bout}}"></td>
                                 <td>
-                                    {{$boun?->status}}
+                                    <select class="form-control form-control-md p-1" id="manageOrderStatus" name="status" style="outline-style:none;" onchange="this.form.submit();">
+                                        <option value="">Status</option>
+                                        <option value="active" {{ old('status', $boun?->status) == 'active' ? 'selected' : null }}>Active</option>
+                                        <option value="inactive" {{ old('status', $boun?->status) == 'inactive' ? 'selected' : null }}>Inactive</option>
+                                        <option value="waiting" {{ old('status', $boun?->status) == 'waiting' ? 'selected' : null }}>Waiting</option>
+                                    </select>
                                 </td>
                             </tr>  
                             @empty  
