@@ -50,10 +50,10 @@
                                                 <p class="mb-0">Price Status: {{ucfirst($order?->status_price)}}</p>
                                                 <p class="mb-0">Car Type: {{ucfirst($order?->car_type_day->name)}}</p>
                                                 <p class="mb-0">Days: {{ucfirst($order?->number_day)}}</p>
-                                                <p class="mb-0">Start Time: {{ucfirst($order?->start_time)}}</p>
-                                                <p class="mb-0">Start Day: {{ucfirst($order?->start_day)}}</p>
-                                                <p class="mb-0">End Day: {{ucfirst($order?->end_day)}}</p>
-                                                <p class="mb-0">Payment: {{ !empty($order?->payments) ? ucfirst($order?->payments) :  ucfirst('No Payment For This Order') }}</p>
+                                                <p class="mb-0 text-success">Start Time: {{ \Carbon\Carbon::createFromFormat('H:i:s', $order->start_time)->format('h:i A') }}</p>
+                                                <p class="mb-0 text-primary">Start Day: {{ucfirst($order?->start_day)}}</p>
+                                                <p class="mb-0 text-primary">End Day: {{ucfirst($order?->end_day)}}</p>
+                                                <p class="mb-0 text-info">Payment: {{ !empty($order?->payments) ? ucfirst($order?->payments) :  ucfirst('No Payment For This Order') }}</p>
                                             </div>
                                         </div>
                                     </div>
