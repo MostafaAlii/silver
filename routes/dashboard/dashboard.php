@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\Admin;
+use App\Http\Controllers\Dashboard\Admin\Order;
 use App\Http\Controllers\Dashboard\General;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -100,7 +101,7 @@ Route::group(
             Route::post('update', 'update')->name('update');
         });
         // Orders ::
-        Route::controller(Admin\OrderController::class)->prefix('orders')->as('orders.')->group(function () {
+        Route::controller(Order\OrderController::class)->prefix('orders')->as('orders.')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('/waiting', 'index')->name('waiting');
             Route::get('/pending', 'index')->name('pending');
@@ -109,6 +110,16 @@ Route::group(
             Route::get('/done', 'done')->name('done');
             Route::get('/{order_code}', 'show')->name('show');
         });
+        // Order Hour ::
+        Route::controller(Order\OrderHourController::class)->prefix('order-hour')->as('orderHour.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/{order_code}', 'show')->name('show');
+        });
+        Route::controller(Order\OrderDayController::class)->prefix('order-day')->as('orderDay.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/{order_code}', 'show')->name('show');
+        });
+        // Order Day ::
         // Discount ::
         Route::resource('discounts', General\DiscountController::class);
         Route::post('discounts/{discountId}/update-status', [General\DiscountController::class, 'updateStatus'])->name('discounts.update-status');

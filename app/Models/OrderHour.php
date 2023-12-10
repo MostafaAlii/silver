@@ -83,4 +83,9 @@ class OrderHour extends Model
         }
         return $result;
     }
+
+    public function carType()
+    {
+        return $this->belongsTo(CarType::class,'car_type_id');
+    }
 }

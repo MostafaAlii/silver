@@ -226,12 +226,39 @@
                         <div class="clearfix"></div>
                     </a>
                     <ul id="orders" class="collapse" data-parent="#sidebarnav">
-                        <li><a href="{{route('orders.index')}}">All orders</a></li>
-                        <li><a href="{{ route('orders.index', ['status' => 'waiting']) }}">orders waiting</a></li>
-                        <li><a href="{{ route('orders.index', ['status' => 'pending']) }}">orders pending</a></li>
-                        <li><a href="{{ route('orders.index', ['status' => 'cancel']) }}">orders cancel</a></li>
-                        <li><a href="{{ route('orders.index', ['status' => 'accepted']) }}">orders accepted</a></li>
-                        <li><a href="{{ route('orders.index', ['status' => 'done']) }}">orders done</a></li>
+                        <!-- Start Hour & Day Order -->
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#order_managment">
+                            <div class="pull-left">
+                                <i class="ti-car"></i>
+                                <span class="right-nav-text">Order Hour & Day</span>
+                            </div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <!-- End Hour & Day Order -->
+                        <ul id="order_managment" class="collapse" data-parent="#sidebarnavcar">
+                            <li><a href="{{ route('orderDay.index') }}">Order Day</a></li>
+                            <li><a href="{{ route('orderHour.index') }}">Order Hour</a></li>
+                        </ul>
+                        <!-- Start Normal Order -->
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#order">
+                            <div class="pull-left">
+                                <i class="ti-car"></i>
+                                <span class="right-nav-text">Orders</span>
+                            </div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="order" class="collapse" data-parent="#sidebarnavcar">
+                            <li><a href="{{route('orders.index')}}">All orders</a></li>
+                            <li><a href="{{ route('orders.index', ['status' => 'waiting']) }}">orders waiting</a></li>
+                            <li><a href="{{ route('orders.index', ['status' => 'pending']) }}">orders pending</a></li>
+                            <li><a href="{{ route('orders.index', ['status' => 'cancel']) }}">orders cancel</a></li>
+                            <li><a href="{{ route('orders.index', ['status' => 'accepted']) }}">orders accepted</a></li>
+                            <li><a href="{{ route('orders.index', ['status' => 'done']) }}">orders done</a></li>
+                        </ul>
+                        <!-- End Normal Order -->
+                        
                     </ul>
                 </li>
                 <!-- End Admin Managment Menu-->
