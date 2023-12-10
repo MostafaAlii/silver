@@ -237,7 +237,7 @@
                         </a>
                         <!-- End Hour & Day Order -->
                         <ul id="order_managment" class="collapse" data-parent="#sidebarnavcar">
-                            <li><a href="{{--route('carMake.index')--}}">Order Day</a></li>
+                            <li><a href="{{ route('orderDay.index') }}">Order Day</a></li>
                             <li><a href="{{ route('orderHour.index') }}">Order Hour</a></li>
                         </ul>
                         <!-- Start Normal Order -->
