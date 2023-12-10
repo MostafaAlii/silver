@@ -115,11 +115,18 @@ Route::group(
             Route::get('/', 'index')->name('index');
             Route::get('/{order_code}', 'show')->name('show');
         });
+        // Order Day ::
         Route::controller(Order\OrderDayController::class)->prefix('order-day')->as('orderDay.')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('/{order_code}', 'show')->name('show');
         });
-        // Order Day ::
+        // Upcaming Order Day ::
+        Route::controller(Order\UpcamingOrderDayController::class)->prefix('upcaming-order-day')->as('upcamingOrderDay.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/{order_code}', 'show')->name('show');
+            Route::post('{orderId}/update-date', [Order\UpcamingOrderDayController::class, 'updateDate'])->name('update-date');
+            Route::post('{orderId}/update-time', [Order\UpcamingOrderDayController::class, 'updateTime'])->name('update-time');
+        });
         // Discount ::
         Route::resource('discounts', General\DiscountController::class);
         Route::post('discounts/{discountId}/update-status', [General\DiscountController::class, 'updateStatus'])->name('discounts.update-status');
