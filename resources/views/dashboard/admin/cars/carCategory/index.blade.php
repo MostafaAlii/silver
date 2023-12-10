@@ -13,7 +13,7 @@
         </div>
         <div class="col-sm-6">
             <ol class="float-left pt-0 pr-0 breadcrumb float-sm-right ">
-                <li class="breadcrumb-item"><a href="{{route('dashboard')}}" class="default-color">Dasboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}" class="default-color">Dasboard</a></li>
                 <li class="breadcrumb-item active">{{$data['title']}}</li>
             </ol>
         </div>
