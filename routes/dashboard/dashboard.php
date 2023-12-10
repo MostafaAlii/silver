@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\Admin;
+use App\Http\Controllers\Dashboard\Admin\Order;
 use App\Http\Controllers\Dashboard\General;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -100,13 +101,18 @@ Route::group(
             Route::post('update', 'update')->name('update');
         });
         // Orders ::
-        Route::controller(Admin\OrderController::class)->prefix('orders')->as('orders.')->group(function () {
+        Route::controller(Order\OrderController::class)->prefix('orders')->as('orders.')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('/waiting', 'index')->name('waiting');
             Route::get('/pending', 'index')->name('pending');
             Route::get('/cancel', 'cancel')->name('cancel');
             Route::get('/accepted', 'accepted')->name('accepted');
             Route::get('/done', 'done')->name('done');
+            Route::get('/{order_code}', 'show')->name('show');
+        });
+        // Order Hour ::
+        Route::controller(Order\OrderHourController::class)->prefix('orderHour')->as('orderHour.')->group(function () {
+            Route::get('/', 'index')->name('index');
             Route::get('/{order_code}', 'show')->name('show');
         });
         // Discount ::
