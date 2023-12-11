@@ -262,7 +262,7 @@
                             </a>
                             <ul id="orderHour_managment" class="collapse" data-parent="#sidebarnavcar">
                                 <li><a href="{{ route('orderHour.index') }}">Order Hour</a></li>
-                                <li><a href="{{-- route('orderDay.index') --}}">Upcoming Order Hour</a></li>
+                                <li><a href="{{ route('upcamingOrderHour.index') }}">Upcoming Order Hour</a></li>
                             </ul>
                             <!-- End Order Hour -->
                         </ul>
