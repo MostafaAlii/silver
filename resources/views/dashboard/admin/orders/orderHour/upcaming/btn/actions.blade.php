@@ -8,21 +8,14 @@
             </span>
         </a>
         <button type="button" class="modal-effect btn btn-sm btn-primary dropdown-item" style="text-align: center !important"
-            data-toggle="modal" data-target="#updateDate{{$order->id}}" data-effect="effect-scale">
+            data-toggle="modal" data-target="#updateHour{{$order->id}}" data-effect="effect-scale">
             <span class="icon text-dark text-bold">
                 <i class="fa fa-edit"></i>
-                Update Date
-            </span>
-        </button>
-        <button type="button" class="modal-effect btn btn-sm btn-success dropdown-item" style="text-align: center !important"
-            data-toggle="modal" data-target="#updateTime{{$order->id}}" data-effect="effect-scale">
-            <span class="icon text-dark text-bold">
-                <i class="fa fa-edit"></i>
-                Update Time
+                Update Hour
             </span>
         </button>
     </div>
 </div>
 
-{{--@include('dashboard.admin.orders.orderDay.upcaming.btn.modals.updateDate')
-@include('dashboard.admin.orders.orderDay.upcaming.btn.modals.updateTime')--}}
+@include('dashboard.admin.orders.orderHour.upcaming.btn.modals.updateHour')
+{{--@include('dashboard.admin.orders.orderDay.upcaming.btn.modals.updateTime')--}}

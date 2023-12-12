@@ -4,16 +4,9 @@ use App\Models\SaveRentHour;
 
 class UpcamingOrderHourService {
 
-    public function updateDate($orderId, $data) {
+    public function updateHour($orderId, $hour_id) {
         $order = SaveRentHour::findOrFail($orderId);
-        $order->data = $data;
-        $order->save();
-        return $order;
-    }
-
-    public function updateTime($orderId, $hours_from) {
-        $order = SaveRentHour::findOrFail($orderId);
-        $order->hours_from = $hours_from;
+        $order->hour_id = $hour_id;
         $order->save();
         return $order;
     }

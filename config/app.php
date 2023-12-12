@@ -200,6 +200,7 @@ return [
         'CarMake' => App\Models\CarMake::class,
         'Captain' => App\Models\Captain::class,
         'CaptainBouns' => \App\Models\CaptionBonus::class,
+        'Hour'          =>  \App\Models\Hour::class,
     ])->toArray(),
 
 ];
