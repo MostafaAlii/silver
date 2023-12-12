@@ -127,11 +127,20 @@ Route::group(
             Route::post('{orderId}/update-date', [Order\UpcamingOrderDayController::class, 'updateDate'])->name('update-date');
             Route::post('{orderId}/update-time', [Order\UpcamingOrderDayController::class, 'updateTime'])->name('update-time');
         });
+        // Upcaming Order Hour ::
+        Route::controller(Order\UpcamingOrderHourController::class)->prefix('upcaming-order-hour')->as('upcamingOrderHour.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/{order_code}', 'show')->name('show');
+            Route::post('{orderId}/update-date', [Order\UpcamingOrderHourController::class, 'updateHour'])->name('update-hour');
+            /*Route::post('{orderId}/update-time', [Order\UpcamingOrderDayController::class, 'updateTime'])->name('update-time');*/
+        });
         // Discount ::
         Route::resource('discounts', General\DiscountController::class);
         Route::post('discounts/{discountId}/update-status', [General\DiscountController::class, 'updateStatus'])->name('discounts.update-status');
         // Packages ::
         Route::resource('packages', General\PackageController::class);
         Route::post('packages/{packageId}/update-status', [General\PackageController::class, 'updateStatus'])->name('packages.update-status');
+        // Hours ::
+        Route::resource('hours', General\HourController::class);
     });
 });

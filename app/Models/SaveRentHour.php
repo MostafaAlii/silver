@@ -9,6 +9,7 @@ class SaveRentHour extends Model
 {
     use HasFactory;
 
+    
     protected $fillable = [
         'user_id',
         'trip_type_id',
@@ -45,5 +46,31 @@ class SaveRentHour extends Model
     public function car_type()
     {
         return $this->belongsTo(CarType::class, 'car_type_id');
+    }
+
+    public function status()
+    {
+        $result = "";
+        switch ($this->status) {
+            case 'done':
+                $result = "تم اتمام الرحله بنجاح";
+                break;
+            case 'waiting':
+                $result = "تم الوصول";
+                break;
+            case 'pending':
+                $result = "تم طلب الرحله";
+                break;
+            case 'cancel':
+                $result = "تم الغاء الرحله بنجاح";
+                break;
+            case 'accepted':
+                $result = "بدأ الرحله";
+                break;
+            default:
+                // Handle any other cases or provide a default action
+                break;
+        }
+        return $result;
     }
 }

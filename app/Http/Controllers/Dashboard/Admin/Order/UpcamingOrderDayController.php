@@ -3,7 +3,6 @@ namespace App\Http\Controllers\Dashboard\Admin\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\Orders\UpcamingOrderDayDataTable;
-use App\Http\Requests\Dashboard\Admin\AdminRequestValidation;
 use App\Services\Dashboard\Admins\Order\UpcamingOrderDayService;
 use App\Models\SaveRentDay;
 class UpcamingOrderDayController extends Controller {
