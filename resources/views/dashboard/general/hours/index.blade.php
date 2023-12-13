@@ -28,7 +28,7 @@
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
-                    <a data-target="#create{{$title}}" data-toggle="modal"  data-effect="effect-scale" class="btn btn-success btn-sm" role="button">
+                    <a data-target="#create_hour" data-toggle="modal"  data-effect="effect-scale" class="btn btn-success btn-sm" role="button">
                         <i class="fa fa-plus"></i>
                         Add New {{$title}}
                     </a>
@@ -40,7 +40,7 @@
                     ], true) !!}
                     <!--end::Table-->
                 </div>
-                {{--@include('dashboard.general.discount.btn.modals.create')--}}
+                @include('dashboard.general.hours.btn.modals.create')
             </div>
         </div>
     </div>
