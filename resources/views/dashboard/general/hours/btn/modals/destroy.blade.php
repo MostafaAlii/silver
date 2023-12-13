@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{ trans('general.delete') .' '. $hour->number_hours . ' Hour' }}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ trans('general.delete') .' '. $hour?->number_hours . ' Hour' }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,7 +14,7 @@
                     @method('DELETE')
                     
                     <div class="alert alert-danger">
-                        <h4 class="text-center">Are You Sure ? to delete <span class="text-danger">{{$hour->code}}</span></h4>
+                        <h4 class="text-center">Are You Sure ? to delete <span class="text-danger">{{$hour?->number_hours . ' Hour'}}</span></h4>
                     </div>
 
 

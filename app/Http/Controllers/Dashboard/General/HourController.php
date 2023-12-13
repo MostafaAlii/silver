@@ -16,6 +16,16 @@ class HourController extends Controller
         return $this->dataTable->render('dashboard.general.hours.index',  ['title' => 'Hours']);
     }
 
+    public function store(Request $request) {
+        try {
+            $validatedData = $request->all();
+            $this->hourService->create($validatedData);
+            return redirect()->route('hours.index')->with('success', 'hour created successfully');
+        } catch (\Exception $e) {
+            return redirect()->route('hours.index')->with('error', 'An error occurred while creating the hour');
+        }
+    }
+
     public function update(Request $request, $hourId) {
         try {
             $requestData = $request->all();
