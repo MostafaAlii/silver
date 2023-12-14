@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubscriptionCaption extends Model
 {
     use HasFactory;
-
+    protected $table = 'subscription_captions';
     protected $fillable = [
         'name_ar',
         'name_en',

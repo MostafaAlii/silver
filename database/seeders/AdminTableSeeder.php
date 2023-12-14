@@ -11,7 +11,7 @@ class AdminTableSeeder extends Seeder {
         Admin::create([
             'name'          =>  'Mostafa',
             'email'         =>  'admin@admin.com',
-            'password'      =>  bcrypt('123123'),
+            'password'      =>  bcrypt('123123123'),
             'remember_token' => Str::random(10),
         ]);
         Schema::enableForeignKeyConstraints();

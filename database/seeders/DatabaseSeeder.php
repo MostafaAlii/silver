@@ -14,24 +14,6 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-
-        /*Settings::updateOrCreate(['id' => 1, 'facebook' => fake()->url(),
-            'instagram' => fake()->url(),
-            'phone' => fake()->phoneNumber(),
-            'whatsapp' => fake()->phoneNumber(),
-            'email' => fake()->unique()->email(),
-            'version' => 1,
-            'open_door' => 3.5,
-            'waiting_price' => 2,
-            'country_tax' => 10,
-            'kilo_price' => 5,
-            'api_secret_key' => fake()->name(),
-            'ocean' => 2,
-            'company_commission' => 5,
-            'company_tax' => 6,
-            'price_day' => 100,
-        ]);*/
-
         $this->call([
             WordSeeder::class,
             WordChangeStatusSeeder::class,
@@ -61,6 +43,7 @@ class DatabaseSeeder extends Seeder
             HourSeeder::class,
             SubscriptionCaptionSeeder::class,
             BonusSeeder::class,
+            WalletTableSeeder::class,
         ]);
     }
 }

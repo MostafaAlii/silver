@@ -164,6 +164,23 @@
                 </li>
                 <!-- End Admin Managment Menu-->
 
+                <!-- Start Subscriptions -->
+                <li class="pl-4 mt-10 mb-10 font-medium text-muted menu-title">Subscriptions</li>
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#subscription">
+                        <div class="pull-left">
+                            <i class="ti-palette"></i>
+                            <span class="right-nav-text">Subscriptions</span>
+                        </div>
+                        <div class="pull-right"><i class="ti-plus"></i></div>
+                        <div class="clearfix"></div>
+                    </a>
+                    <ul id="subscription" class="collapse" data-parent="#sidebarnav">
+                        <li><a href="{{route('subscriptions.index')}}">Subscriptions</a></li>
+                    </ul>
+                </li>
+                <!-- End Subscriptions -->
+
                 <!-- Start Bouns -->
                 <li class="pl-4 mt-10 mb-10 font-medium text-muted menu-title">Bouns</li>
                 <li>

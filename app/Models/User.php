@@ -32,7 +32,7 @@ class User extends Authenticatable implements JWTSubject {
         return [];
     }
 
-
-
-
+    public function scopeActive() {
+        return $this->whereStatus('active')->get();
+    }
 }
