@@ -34,7 +34,6 @@
                     Add New {{$data['title']}}
                 </a>
                 <br><br>
-                <br><br>
                 <!--begin::Table-->
                 {!! $dataTable->table([
                 'class' => 'dataTable table table-row-dashed table-striped table-hover table-borderd table-row-gray-300
